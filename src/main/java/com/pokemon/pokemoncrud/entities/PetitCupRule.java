@@ -6,17 +6,15 @@ import javax.persistence.*;
 
 @Data
 @Entity
-@Table(name = "pokemons")
-public class Pokemon {
-
+@Table(name = "petit_cup_rules")
+public class PetitCupRule {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", updatable = false, nullable = false)
     private Integer id;
 
-    private String name;
-
-    private Integer user_id;
+    @Column(name = "id_pokemon")
+    private Integer idPokemon;
 
     public Integer getId() {
         return id;
@@ -26,19 +24,11 @@ public class Pokemon {
         this.id = id;
     }
 
-    public String getName() {
-        return name;
+    public Integer getIdPokemon() {
+        return idPokemon;
     }
 
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public Integer getUser_id() {
-        return user_id;
-    }
-
-    public void setUser_id(Integer user_id) {
-        this.user_id = user_id;
+    public void setIdPokemon(Integer idPokemon) {
+        this.idPokemon = idPokemon;
     }
 }
